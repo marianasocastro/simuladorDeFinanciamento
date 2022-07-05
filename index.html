@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Financiamento</title>
+    <style>
+        body {
+            background: rgb(4, 4, 45);
+            background-image: url('./assets/mackenzie-marco-XG88BYDSDZA-unsplash.jpg');
+            background-repeat: no-repeat;
+            background-size:cover;
+            font: 11pt tahoma;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;  
+            padding-top: 90px;
+            padding-bottom: 90px;
+             
+            
+        }
+
+        #form{
+            width: 30%;
+            background-color: white;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            text-align: center;
+            
+            
+
+        }
+
+        h2 {
+            padding: 10px;
+        }
+
+        #textoValor , #textoEntrada , #textoTaxaJuros , #textoPrazo {
+            width: 230px;
+        }
+
+       
+        #botao {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            padding-bottom: 10px;
+        }
+        #botaoCalcular {
+            background-color: darkgreen;
+            color: white;
+            border-radius: 10px;
+            border:0;
+            width: 100px;
+            height: 25px;
+            margin-right: 10px;
+        }
+
+       
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 15px;
+            
+           
+        }
+
+        table {
+            background-color: white;
+            border-radius: 10px;
+
+        }
+
+        tr:nth-child(even) {
+            background-color: olivedrab;
+        }
+
+    </style>
+</head>
+<body>
+    <section id="form">
+        
+        <h2>Simulador de Financiamento com Sistema de amortização Constante </h2>
+        <input id="textoValor" type="text" placeholder="Valor do bem"><br>
+        <input id="textoEntrada" type="text" placeholder="Valor de entrada"><br>
+        <input id="textoTaxaJuros" type="text" placeholder="Taxa de Juros (%)"><br>
+        <input id="textoPrazo" type="text" placeholder="Prazo em meses"><br>
+        <div id="botao">
+            <button id="botaoCalcular">Calcular</button>
+            <input id='comCarencia' type="checkbox">Com carência?
+            <select id="listaSuspensa" hidden>
+                <option value="2">2 meses</option>
+                <option value="3">3 meses</option>
+                <option value="4">4 meses</option>
+            </select>
+        </div>
+    </section>
+   
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Valor da Parcela</th>
+                    <th>Amortização</th>
+                    <th>Juros</th>
+                    <th>Saldo Devedor</th>
+                </tr>
+            </thead>
+            <tbody id="corpoTabela">
+
+            </tbody>
+        </table>
+    </section>
+    <script type='module' src="./index.js"></script>
+</body>
+</html>
